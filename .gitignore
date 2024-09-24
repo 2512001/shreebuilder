@@ -1,0 +1,8 @@
+# Environment variables
+.env
+
+# Node.js dependencies
+node_modules/
+
+# Ignore .dg_store in any subdirectory
+**/.dg_store/
