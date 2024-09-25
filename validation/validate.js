@@ -14,13 +14,8 @@ const contact_validation = Joi.object({
     message: Joi.string()
 });
 
-const admin_validation = Joi.object({
-    username: Joi.string().min(2).max(50).required("enter username"),
-    password : Joi.string().max(20).min(5).required("please enter password")
-});
 
 module.exports = {
     qoute_validation,
-    contact_validation,
-    admin_validation
+    contact_validation
 };

@@ -8,20 +8,17 @@ const cors = require('cors');
 const router = require('./router/router');
 const path = require('path');
 const engine = require('ejs-mate');
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
-const session = require('express-session');
-const Admin = require('./model/admin');
 const expressError = require('./utils/expressErr');
 const helmet = require('helmet');
 
 async function main() {
   try {
-    await mongoose.connect(process.env.DATABASE_URL);
+    mongoose.connect(process.env.DATABASE_URL);
   } catch (err) {
     console.log(err);
   }
 }
+
 
 main().then(() => {
   console.log('database connected');
@@ -36,26 +33,6 @@ app.use(helmet());
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json()); 
-
- console.log(__dirname);
-const sessionOptions = {
-  secret: process.env.SESSION_SECRECT, 
-  resave: false,
-  saveUninitialized: true,
-  cookie: {
-    httpOnly: true,
-    maxAge: 1 * 24 * 60 * 60 * 1000, // 1 day
-    expires: new Date(Date.now() + 1 * 24 * 60 * 60 * 1000) // 1 day
-  }
-};
-
-app.use(session(sessionOptions));
-app.use(passport.initialize());
-app.use(passport.session());
-
-passport.use(new LocalStrategy(Admin.authenticate()));
-passport.serializeUser(Admin.serializeUser());
-passport.deserializeUser(Admin.deserializeUser());
 
 
 
