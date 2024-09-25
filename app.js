@@ -39,7 +39,6 @@ app.use(express.json());
 app.use('/', router);
 
 
-// page not found
 app.all('/*', (req, res, next) => {
   next(new expressError(404, 'Page not found'));
 });
