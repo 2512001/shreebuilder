@@ -1,105 +1,126 @@
 <% layout('/layout/boilerplate') %>
-<main class="main">
-  <!-- Page Title -->
-  <div class="page-title dark-background" style="background-image: url(image/page-title-bg.jpg);">
-    <div class="container position-relative">
-      <h1>Contact</h1>
-      <nav class="breadcrumbs">
-        <ol>
-          <li><a href="/home">Home</a></li>
-          <li class="current">Contact</li>
-        </ol>
-      </nav>
-    </div>
-  </div><!-- End Page Title -->
+  <style>
+    .mapImg {
+      cursor: pointer;
+      border-left: 1px solid #2c6e49;
+      border-right: 1px solid #2c6e49;
+      box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.1);
+    }
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact section">
-    <div class="container" data-aos="fade-up" data-aos-delay="100">
-      <div class="row gy-4">
-
-        <div class="col-lg-6">
-          <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
-            <i class="bi bi-geo-alt"></i>
-            <h3>Address</h3>
-            <p>Vasudev Valley, Jamdare Heights Javsai Ambernath (W) 421502</p>
-          </div>
-        </div><!-- End Info Item -->
-
-        <div class="col-lg-3 col-md-6">
-          <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="300">
-            <i class="bi bi-telephone"></i>
-            <h3>Call Us</h3>
-            <p>+91 97023 39996 <br> +91 97023 39995</p>
-          </div>
-        </div><!-- End Info Item -->
-
-        <div class="col-lg-3 col-md-6">
-          <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="400">
-            <i class="bi bi-envelope"></i>
-            <h3>Email Us</h3>
-            <p class="d-flex text-wrap">shreebuildersanddevelopers25@gmail.com</p>
-          </div>
-        </div><!-- End Info Item -->
-
+    .mapImg img {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+  <main class="main">
+    <!-- Page Title -->
+    <div class="page-title dark-background" style="background-image: url(image/page-title-bg.jpg);">
+      <div class="container position-relative">
+        <h1>Contact</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="/home">Home</a></li>
+            <li class="current">Contact</li>
+          </ol>
+        </nav>
       </div>
-      
-      <div class="row gy-4 mt-1">
-        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-          <div class="map">
-            <div id="map"></div>
-          </div>
-        </div><!-- End Map Container -->
+    </div><!-- End Page Title -->
 
-        <div class="col-lg-6">
-          <form method="post" class="php-email-form needs-validation" novalidate  data-aos="fade-up" data-aos-delay="400">
-            <div class="row gy-4">
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
 
-              <div class="col-md-6">
-                <input type="text" name="name" class="form-control name" placeholder="Your Name" required id="invalidCheck" >
-                <div class="invalid-feedback">
-                  Please enter your name.
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                <input type="email" class="form-control email" name="email"  placeholder="Your Email" required id="invalidCheck">
-                <div class="invalid-feedback">
-                  Please enter a valid email address.
-                </div>
-              </div>
-
-              <div class="col-md-12">
-                <input type="text" class="form-control subject"   name="subject" placeholder="Subject" required id="invalidCheck">
-                <div class="invalid-feedback">
-                  Please enter a subject.
-                </div>
-              </div>
-
-              <div class="col-md-12">
-                <textarea class="form-control message" name="message"  rows="6" placeholder="Message" required id="invalidCheck"></textarea>
-                <div class="invalid-feedback">
-                  Please enter your message.
-                </div>
-              </div>
-
-              <div class="col-md-12 text-center">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-                <button type="submit" id="contectbtn">Send Message</button>
-              </div>
-
+          <div class="col-lg-6">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up"
+              data-aos-delay="200">
+              <i class="bi bi-geo-alt"></i>
+              <h3>Address</h3>
+              <p>Vasudev Valley, Jamdare Heights Javsai Ambernath (W) 421502</p>
             </div>
-          </form>          
-        </div><!-- End Contact Form -->
+          </div><!-- End Info Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up"
+              data-aos-delay="300">
+              <i class="bi bi-telephone"></i>
+              <h3>Call Us</h3>
+              <p>+91 97023 39996 <br> +91 97023 39995</p>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up"
+              data-aos-delay="400">
+              <i class="bi bi-envelope"></i>
+              <h3>Email Us</h3>
+              <p class="d-flex text-wrap">shreebuildersanddevelopers25@gmail.com</p>
+            </div>
+          </div><!-- End Info Item -->
+
+        </div>
+
+        <div class="row gy-4 mt-1">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="mapImg">
+              <img src="image/map.png" alt="map" />
+            </div>
+          </div><!-- End Map Container -->
+
+          <div class="col-lg-6">
+            <form method="post" class="php-email-form needs-validation" novalidate data-aos="fade-up"
+              data-aos-delay="400">
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control name" placeholder="Your Name" required
+                    id="invalidCheck">
+                  <div class="invalid-feedback">
+                    Please enter your name.
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <input type="email" class="form-control email" name="email" placeholder="Your Email" required
+                    id="invalidCheck">
+                  <div class="invalid-feedback">
+                    Please enter a valid email address.
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <input type="text" class="form-control subject" name="subject" placeholder="Subject" required
+                    id="invalidCheck">
+                  <div class="invalid-feedback">
+                    Please enter a subject.
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control message" name="message" rows="6" placeholder="Message" required
+                    id="invalidCheck"></textarea>
+                  <div class="invalid-feedback">
+                    Please enter your message.
+                  </div>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+                  <button type="submit" id="contectbtn">Send Message</button>
+                </div>
+
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
 
       </div>
+    </section>
+  </main>
 
-    </div>
-  </section>
-</main>
-
-<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-<div id="preloader"></div>
-
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"></div>

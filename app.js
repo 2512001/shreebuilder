@@ -13,7 +13,10 @@ const helmet = require('helmet');
 
 async function main() {
   try {
-    mongoose.connect(process.env.DATABASE_URL);
+    mongoose.connect('mongodb://127.0.0.1:27017/construction');
+
+    // mongoose.connect('mongodb://localhost:1.2.7/construction');
+    // mongoose.connect(process.env.DATABASE_URL);
   } catch (err) {
     console.log(err);
   }
